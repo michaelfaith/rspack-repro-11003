@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "rspack",
+    "build": "tsc -b && rspack",
     "dev": "rspack dev"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
+    "ts-checker-rspack-plugin": "^1.1.4",
     "typescript": "^5.8.3",
     "webpack": "^5.100.2",
     "webpack-cli": "^6.0.1"

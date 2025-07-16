@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { TsCheckerRspackPlugin } from "ts-checker-rspack-plugin";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -13,7 +14,7 @@ const config = {
   entry: {
     main: "./src/index.ts",
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin(), new TsCheckerRspackPlugin()],
   output: {
     clean: true,
     path: path.resolve(__dirname, "../../dist"),
