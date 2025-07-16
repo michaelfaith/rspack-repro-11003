@@ -9,32 +9,33 @@ importers:
   .: {}
 
   packages/app:
-    dependencies:
+    devDependencies:
       '@rspack/cli':
         specifier: ^1.4.8
         version: 1.4.8(@rspack/core@1.4.8(@swc/helpers@0.5.17))(@types/express@4.17.21)(webpack-cli@6.0.1)(webpack@5.100.2)
       '@rspack/core':
         specifier: ^1.4.8
         version: 1.4.8(@swc/helpers@0.5.17)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       html-webpack-plugin:
         specifier: ^5.6.3
         version: 5.6.3(@rspack/core@1.4.8(@swc/helpers@0.5.17))(webpack@5.100.2)
+      npm-run-all2:
+        specifier: ^7.0.2
+        version: 7.0.2
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
       webpack:
         specifier: ^5.100.2
         version: 5.100.2(webpack-cli@6.0.1)
       webpack-cli:
         specifier: ^6.0.1
         version: 6.0.1(webpack@5.100.2)
-    devDependencies:
-      '@rsbuild/core':
-        specifier: ^1.4.7
-        version: 1.4.7
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
-      npm-run-all2:
-        specifier: ^7.0.2
-        version: 7.0.2
+
+  packages/package-a: {}
 
 packages:
 
@@ -120,11 +121,6 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@polka/url/-/url-1.0.0-next.25.tgz}
-
-  '@rsbuild/core@1.4.7':
-    resolution: {integrity: sha512-mYvMYlCKUQAfz7x7GJnD6lBsVBfUSEAfrZLxkDQ0F3w7If9cQpHWLWZWdRmcFFy3Pzns1Edxn0st1nAmcFhRJQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@rsbuild/core/-/core-1.4.7.tgz}
-    engines: {node: '>=16.10.0'}
-    hasBin: true
 
   '@rspack/binding-darwin-arm64@1.4.8':
     resolution: {integrity: sha512-PQRNjC3Fc0avpx8Gk+sT5P+HAXxTSzmBA8lU7QLlmbW5GGXO2taVhNstbZ4oxyIX5uDVZpQ2yQ2E0zXirK6/UQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/@rspack/binding-darwin-arm64/-/binding-darwin-arm64-1.4.8.tgz}
@@ -544,9 +540,6 @@ packages:
   cookie@0.7.1:
     resolution: {integrity: sha512-6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==, tarball: https://packages.atlassian.com/api/npm/npm-remote/cookie/-/cookie-0.7.1.tgz}
     engines: {node: '>= 0.6'}
-
-  core-js@3.44.0:
-    resolution: {integrity: sha512-aFCtd4l6GvAXwVEh3XbbVqJGHDJt0OZRa+5ePGx3LLwi12WfexqQxcsohb2wgsa/92xtl19Hd66G/L+TaAxDMw==, tarball: https://packages.atlassian.com/api/npm/npm-remote/core-js/-/core-js-3.44.0.tgz}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/core-util-is/-/core-util-is-1.0.3.tgz}
@@ -984,10 +977,6 @@ packages:
   jest-worker@27.5.1:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==, tarball: https://packages.atlassian.com/api/npm/npm-remote/jest-worker/-/jest-worker-27.5.1.tgz}
     engines: {node: '>= 10.13.0'}
-
-  jiti@2.4.2:
-    resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==, tarball: https://packages.atlassian.com/api/npm/npm-remote/jiti/-/jiti-2.4.2.tgz}
-    hasBin: true
 
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==, tarball: https://packages.atlassian.com/api/npm/npm-remote/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz}
@@ -1455,6 +1444,11 @@ packages:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==, tarball: https://packages.atlassian.com/api/npm/npm-remote/type-is/-/type-is-1.6.18.tgz}
     engines: {node: '>= 0.6'}
 
+  typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==, tarball: https://packages.atlassian.com/api/npm/npm-remote/typescript/-/typescript-5.8.3.tgz}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==, tarball: https://packages.atlassian.com/api/npm/npm-remote/undici-types/-/undici-types-5.26.5.tgz}
 
@@ -1712,14 +1706,6 @@ snapshots:
 
   '@polka/url@1.0.0-next.25': {}
 
-  '@rsbuild/core@1.4.7':
-    dependencies:
-      '@rspack/core': 1.4.8(@swc/helpers@0.5.17)
-      '@rspack/lite-tapable': 1.0.1
-      '@swc/helpers': 0.5.17
-      core-js: 3.44.0
-      jiti: 2.4.2
-
   '@rspack/binding-darwin-arm64@1.4.8':
     optional: true
 
@@ -1815,6 +1801,7 @@ snapshots:
   '@swc/helpers@0.5.17':
     dependencies:
       tslib: 2.8.1
+    optional: true
 
   '@tybys/wasm-util@0.10.0':
     dependencies:
@@ -2200,8 +2187,6 @@ snapshots:
   cookie-signature@1.0.6: {}
 
   cookie@0.7.1: {}
-
-  core-js@3.44.0: {}
 
   core-util-is@1.0.3: {}
 
@@ -2613,8 +2598,6 @@ snapshots:
       '@types/node': 20.14.9
       merge-stream: 2.0.0
       supports-color: 8.1.1
-
-  jiti@2.4.2: {}
 
   json-parse-even-better-errors@2.3.1: {}
 
@@ -3084,6 +3067,8 @@ snapshots:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+
+  typescript@5.8.3: {}
 
   undici-types@5.26.5: {}
 

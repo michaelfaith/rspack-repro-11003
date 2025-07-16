@@ -1,0 +1,6 @@
+{
+  "name": "@rspack-repro/package-a",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module"
+}

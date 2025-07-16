@@ -16,7 +16,7 @@ const config = {
   mode: "development",
   devtool: false,
   entry: {
-    main: "./src/index",
+    main: "./src/index.ts",
   },
   plugins: [new HtmlWebpackPlugin()],
   output: {
@@ -28,6 +28,9 @@ const config = {
   },
   experiments: {
     css: true,
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
   },
 };
 
