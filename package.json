@@ -4,12 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter @rspack-repro/app run build",
-    "build:rspack": "pnpm --filter @rspack-repro/app run build:rspack",
-    "build:rsbuild": "pnpm --filter @rspack-repro/app run build:rsbuild",
-    "build:webpack": "pnpm --filter @rspack-repro/app run build:webpack",
-    "dev:rspack": "pnpm --filter @rspack-repro/app run dev:rspack",
-    "dev:rsbuild": "pnpm --filter @rspack-repro/app run dev:rsbuild",
-    "dev:webpack": "pnpm --filter @rspack-repro/app run dev:webpack"
+    "dev": "pnpm --filter @rspack-repro/app run dev"
   },
   "packageManager": "pnpm@10.13.1"
 }
